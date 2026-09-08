@@ -15,7 +15,7 @@ if ($u == 'admin' && $p == "admin123")
 else {$errore = "Credenziali amministratore errate";};
 };
 
-if (isset($_POST["btn_aggiungi"]))
+if (isset($_POST["btn_aggiungi"]) && isset($_SESSION["admin"]))
     {$titolo = $_POST["titolo"];
    $tipo = $_POST["tipo"];
    $prezzo = $_POST["prezzo"];
@@ -32,7 +32,7 @@ if (isset($_POST["btn_aggiungi"]))
    };
 
 
-   if (isset($_POST["btn_elimina"]))
+   if (isset($_POST["btn_elimina"]) && isset($_SESSION["admin"]))
     {$id = $_POST["id_elimina"];
    $sql = "DELETE FROM viaggi WHERE id = $id";
    $ok = mysqli_query($conn, $sql);
@@ -41,7 +41,7 @@ if (isset($_POST["btn_aggiungi"]))
    else {$errore = "Impossibile eliminare il viaggio";};
    };
 
-if (isset($_POST["btn_elimina_utente"]))
+if (isset($_POST["btn_elimina_utente"]) && isset($_SESSION["admin"]))
     {$u = $_POST["username_elimina"];
 $sql = "DELETE FROM utenti WHERE username='$u'";
 $ok = mysqli_query($conn, $sql);
@@ -50,10 +50,10 @@ $ok = mysqli_query($conn, $sql);
    else {$errore = "Impossibile eliminare l'utente";};
    };
 
-if (isset($_POST["btn_aggiorna"]))
+if (isset($_POST["btn_aggiorna"]) && isset($_SESSION["admin"]))
     {$id = $_POST["id_mod"];
 $titolo = $_POST["titolo_mod"];
-$tipo = $_POST["tipo"];
+$tipo = $_POST["tipo_mod"];
 $prezzo = $_POST["prezzo_mod"];
 $descrizione = $_POST["descrizione_mod"];
    if ($titolo == "" || $tipo == "" || $prezzo == "" || $descrizione == "") {$errore = "C'è un campo vuoto";}
@@ -74,10 +74,10 @@ else {$errore = "Impossibile modificare il viaggio";};};
 <html lang="IT">
 <head>
  <meta charset="UTF-8" >
-  <title> SiVola </title>
+  <title> Amministrazione </title>
 
     <meta name="keywords" content="Viaggi, content creator, esperienze, turismo, SiVola" >
-    <meta name="description" content="SiVola" >
+    <meta name="description" content="Amministrazione" >
     <meta name="author" content="Nicolò Perazzotti" >
   <link rel="stylesheet" type="text/css" href="style.css" >
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,7 +114,7 @@ echo "</form>";
    echo "</form>";
 
    
-   };
+   
 
    echo "<h4> Rimuovi un viaggio </h4>";
 
@@ -174,6 +174,11 @@ echo "Descrizione: <textarea name='descrizione_mod'>".$v["descrizione"]."</texta
 echo "<input type='submit' name='btn_aggiorna' value='Salva'>";
 echo "</form>";
 };
+
+echo "<a href='logout.php'> Esci dall'area amministratore </a>";
+};
+
+
 
 ?>
 

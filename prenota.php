@@ -24,8 +24,10 @@ if (isset($_POST["invia"]))
 
      if ($data == "" || !is_numeric($persone))
         { $errore = "Compila correttamente tutti i campi"; }
-        else
-        { $sql = "INSERT INTO prenotazioni (username, id_viaggio, data, persone)
+        elseif ($data <date("Y-m-d"))
+            {$errore = "Non puoi prenotare una data passata";}
+
+       else { $sql = "INSERT INTO prenotazioni (username, id_viaggio, data, persone)
                   VALUES ('$username', '$id', '$data', '$persone')";
           $ok = mysqli_query($conn, $sql);
           if ($ok) { $messaggio = "Prenotazione effettuata con successo"; }
@@ -42,7 +44,7 @@ $ris = mysqli_query($conn, $sql);
 <html lang="IT">
 <head>
     <meta charset="UTF-8">
-    <title>Cerca Viaggi</title>
+    <title>Prenota</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>

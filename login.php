@@ -28,10 +28,10 @@ if (isset($_POST["username"]))
 <html lang="IT">
 <head>
  <meta charset="UTF-8" >
-  <title> SiVola </title>
+  <title> Login </title>
 
     <meta name="keywords" content="Viaggi, content creator, esperienze, turismo, SiVola" >
-    <meta name="description" content="SiVola" >
+    <meta name="description" content="Login" >
     <meta name="author" content="Nicolò Perazzotti" >
   <link rel="stylesheet" type="text/css" href="style.css" >
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +42,8 @@ if (isset($_POST["username"]))
 <?php if (isset($errore)) { echo "<p>".$errore."</p>"; }; ?>
 
 <form method="POST" action="login.php">
-  Username: <input type="text" name="username"> <br>
-  Password: <input type="password" name="password"> <br>
+  Username: <input type="text" name="username" required> <br>
+  Password: <input type="password" name="password" required> <br>
   <input type="submit" value="ACCEDI">
 </form>
 

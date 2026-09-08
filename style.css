@@ -1,0 +1,141 @@
+body {
+   width: 97%;
+   font-family: arial;
+   background-color: #e4e8f5;
+ }   
+ 
+header {
+	width: 100%;
+	padding: 0px;
+	text-align: center;
+	
+}
+
+logo {
+	width: 900px;
+}
+
+#relative {
+	position: relative;
+	width: 500px;
+	height: 300px;
+}
+
+nav {
+	width: 50%;
+	background-color: #6495ED;
+	display: inline;
+	text-align: center;
+}
+
+li {
+	display: inline-block;
+	padding: 15px; 
+}
+
+
+aside {
+	width:40%;
+	padding: 25px;
+	
+}
+
+footer {
+	width:100%;
+	padding: 25px;
+	color: #000000;
+	clear: left;
+	background-color: #dddddd
+}
+
+table {
+	table-layout: fixed;
+	margin: auto;
+	width: 600px;
+	border: 1px solid #000000;
+	border-spacing: 10px;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+td {
+	border: 2px solid #000000;
+	padding: 8px;
+}
+
+th {
+	border: 2px solid #000000;
+	padding: 8px;
+	color: #4B0082
+}
+
+#Antartide {
+ width: 560px; 
+ height: 315px;
+}
+ 
+#Uzbekistan {
+  width: 560px;
+  height: 315px;
+}
+
+#Cina {
+ width: 560px;
+ height: 315px;
+}
+
+#Kenya {
+ width: 560px;
+ height: 315px;
+}	
+
+#Egitto {
+ width: 560px;
+ height: 315px;	
+}
+
+#Recensione1 {
+	width: 500px;
+	height: 300px;
+	border: 0px solid #cccccc;
+	padding: 25px;
+	margin: 50px; 
+}
+
+#relative {
+	position: relative;
+	border: 0px solid #cccccc;
+	left: 500px;
+	top: -110px;
+	
+}
+
+#Recensione2 {
+	width: 515px;
+	height: 360px;
+	border: 0px solid #cccccc;
+	padding: 25px;
+	margin: 50px;
+}
+
+#Recensione3 {
+	width: 500px;
+	height: 360px;
+	border: 0px solid #cccccc;
+	padding: 25px;
+	margin: 50px;
+}
+
+
+#Login {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 50px auto; 
+  }
+	
+
